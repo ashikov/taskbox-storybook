@@ -1,8 +1,11 @@
 setup:
-	yarn
+	npm install
 
 storybook:
-	yarn storybook
+	npm storybook
 
 start:
-	yarn start
+	npm start
+
+test:
+	npm test
