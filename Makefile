@@ -2,7 +2,7 @@ setup:
 	npm install
 
 storybook:
-	npm storybook
+	npm run-script storybook
 
 start:
 	npm start
