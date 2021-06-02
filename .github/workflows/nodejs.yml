@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -24,4 +26,7 @@ jobs:
       - name: Execute tests
         run: make test
       - name: Publish storybook to chromatic
-        run: npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
